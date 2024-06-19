@@ -18,9 +18,13 @@
 class Animal {
 	public:
 		Animal();
+		Animal( std::string type );
 		Animal(const Animal &copy);
 		Animal	&operator=(const Animal &src);
 		~Animal();
+
+		virtual void	makeSound() const;
+		
 	protected:
 		std::string _type;
 	

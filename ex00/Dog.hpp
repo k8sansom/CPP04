@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:15:59 by ksansom           #+#    #+#             */
-/*   Updated: 2024/06/19 11:27:20 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/06/21 11:35:38 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class Dog: public Animal {
 	public:
 		Dog();
-		virtual ~Dog();
 		Dog(const Dog &copy);
 		Dog	&operator=(const Dog &src);
-	protected:
-		std::string	_type;
+		~Dog();
+
+		void	makeSound(void) const;
 };
 
 #endif

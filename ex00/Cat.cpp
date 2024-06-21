@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 11:18:55 by ksansom           #+#    #+#             */
-/*   Updated: 2024/06/21 10:02:30 by ksansom          ###   ########.fr       */
+/*   Created: 2024/06/21 09:43:27 by ksansom           #+#    #+#             */
+/*   Updated: 2024/06/21 10:02:55 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(): Animal("Dog") {
+Cat::Cat(void) : Animal("Cat") {
 	std::cout << _type << " constructor called" << std::endl;
 }
 
-Dog::~Dog() {
-	std::cout << "Dog destructor called" << std::endl;
-}
-
-Dog::Dog(const Dog &copy): Animal(copy) {
+Cat::Cat(const Cat &copy) {
 	*this = copy;
-	std::cout << "Dog copy constructor called" << std::endl;
-}
-Dog	&Dog::operator=(const Dog &src) {
-	if (this != &src) {
-		*this = src;
-	}
-	std::cout << "Dog copy assignment operator called" << std::endl;
-	return (*this);
+	std::cout << "Cat copy constructor called" << std::endl;
 }
 
-void	Dog::makeSound(void) const {
-	std::cout << "woof" << std::endl;
+Cat &Cat::operator=(const Cat &src) {
+	if (this != &src) 
+		*this = src;
+	std::cout << "Cat copy assignment operator called" << std::endl;
+	return (*this);		
+}
+
+Cat::~Cat() {
+	std::cout << "Cat destructor called" << std::endl;
+}
+	
+void	Cat::makeSound(void) const {
+	std::cout << "meow" << std::endl;
 }

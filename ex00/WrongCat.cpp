@@ -13,7 +13,7 @@ WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy) {
 }
 WrongCat& WrongCat::operator=(const WrongCat &src) {
 	if (this != &src)
-		*this = src;
+		_type = src._type;
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	return (*this);
 }

@@ -19,7 +19,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &copy) {
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal &src) {
 	if (this != &src)
-		*this = src;
+		_type = src._type;
 	std::cout << "WrongAnimal copy assignment operator called" << std::endl;
 	return (*this);
 }

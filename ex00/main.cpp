@@ -20,8 +20,8 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << "The Animal j type is " << j->getType() << std::endl;
+	std::cout << "The Animal i type is " << i->getType() << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
@@ -29,7 +29,8 @@ int main()
 	delete j;
 	delete i;
 
-	std::cout << "WRONG ANIMAL" << std::endl;
+	std::cout << std::endl;
+	std::cout << "*************WRONG ANIMAL***************" << std::endl;
 	const WrongAnimal* wrong = new WrongAnimal();
 	const WrongAnimal* wrongCat = new WrongCat();
 	wrong->makeSound();

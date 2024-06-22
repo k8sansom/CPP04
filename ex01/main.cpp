@@ -18,14 +18,18 @@ int main() {
     Animal* animals[animalCount];
 
     for (int i = 0; i < animalCount / 2; ++i) {
+        std::cout << "Animal " << i << ": " << std::endl;
         animals[i] = new Dog();
     }
 
     for (int i = animalCount / 2; i < animalCount; ++i) {
+        std::cout << "Animal " << i << ": " << std::endl;
         animals[i] = new Cat();
     }
 
 	// Deep copy test
+    std::cout << std::endl;
+    std::cout << "*************Deep copy tests**************" << std::endl;
     Dog originalDog;
     originalDog.getBrain()->setIdea(0, "Original idea");
 
@@ -35,8 +39,13 @@ int main() {
     std::cout << "Original Dog Brain Idea: " << originalDog.getBrain()->getIdea(0) << std::endl;
     std::cout << "Copied Dog Brain Idea: " << copiedDog.getBrain()->getIdea(0) << std::endl;
 
+    Dog basic;
+    {
+        Dog tmp = basic;
+    }
 
     for (int i = 0; i < animalCount; ++i) {
+        std::cout << "Animal " << i << ": " << std::endl;
         delete animals[i];
     }
     return 0;

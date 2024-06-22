@@ -13,10 +13,10 @@
 # ifndef DOG_HPP
 #define DOG_HPP
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog: public AAnimal {
+class Dog: public Animal {
 	public:
 		Dog();
 		Dog(const Dog &copy);
@@ -24,9 +24,9 @@ class Dog: public AAnimal {
 		~Dog();
 
     	Brain* 	getBrain() const;
-		void 	makeSound() const override;
+		void	makeSound(void) const;
 	private:
-		Brain *brain;
+		Brain *_brain;
 };
 
 #endif

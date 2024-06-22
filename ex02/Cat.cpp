@@ -14,8 +14,8 @@
 
 Cat::Cat(void) : Animal("Cat") {
 	std::cout << _type << " constructor called" << std::endl;
-	brain = new Brain();
-	if (!brain) {
+	_brain = new Brain();
+	if (!_brain) {
 		std::cout << "Cat brain allocation failed" << std::endl;
 		exit(1);
 	}
@@ -23,8 +23,8 @@ Cat::Cat(void) : Animal("Cat") {
 }
 
 Cat::Cat(const Cat &copy) : Animal(copy) {
-	brain = new Brain(*copy.brain);
-	if (!brain) {
+	_brain = new Brain(*copy._brain);
+	if (!_brain) {
 		std::cout << "Cat brain copy allocation failed" << std::endl;
 		exit(1);
 	}
@@ -33,9 +33,9 @@ Cat::Cat(const Cat &copy) : Animal(copy) {
 
 Cat &Cat::operator=(const Cat &src) {
 	if (this != &src) {
-		delete brain;
-		brain = new Brain(*src.brain);
-		if (!brain) {
+		delete (_brain);
+		_brain = new Brain(*src._brain);
+		if (!_brain) {
 			std::cout << "Cat copy assignment memory allocation failed" << std::endl;
 			exit(1);
 		}
@@ -47,7 +47,7 @@ Cat &Cat::operator=(const Cat &src) {
 
 Cat::~Cat() {
 	std::cout << "Cat destructor called" << std::endl;
-	delete brain;
+	delete (_brain);
 }
 	
 void	Cat::makeSound(void) const {
@@ -55,5 +55,5 @@ void	Cat::makeSound(void) const {
 }
 
 Brain* Cat::getBrain() const {
-    return brain;
+    return (_brain);
 }

@@ -15,21 +15,21 @@
 
 int main() {
     int animalCount = 10;
-    AAnimal* animals[animalCount];
+    Animal* animals[animalCount];
 
     for (int i = 0; i < animalCount / 2; ++i) {
+        std::cout << "Animal " << i << ": " << std::endl;
         animals[i] = new Dog();
     }
 
     for (int i = animalCount / 2; i < animalCount; ++i) {
+        std::cout << "Animal " << i << ": " << std::endl;
         animals[i] = new Cat();
     }
 
-    for (int i = 0; i < animalCount; ++i) {
-        animals[i]->makeSound();
-    }
-
 	// Deep copy test
+    std::cout << std::endl;
+    std::cout << "*************Deep copy tests**************" << std::endl;
     Dog originalDog;
     originalDog.getBrain()->setIdea(0, "Original idea");
 
@@ -39,8 +39,14 @@ int main() {
     std::cout << "Original Dog Brain Idea: " << originalDog.getBrain()->getIdea(0) << std::endl;
     std::cout << "Copied Dog Brain Idea: " << copiedDog.getBrain()->getIdea(0) << std::endl;
 
+    //test the abstract classmake re
+    std::cout << std::endl;
+    std::cout << "*************Test the pure virtual function**************" << std::endl;
+    // Animal test;
+    // if above is uncommented it shouldn't compile 
 
     for (int i = 0; i < animalCount; ++i) {
+        std::cout << "Animal " << i << ": " << std::endl;
         delete animals[i];
     }
     return 0;

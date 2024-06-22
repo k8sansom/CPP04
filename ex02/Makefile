@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Brains
+NAME = Abstract
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98

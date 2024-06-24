@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:34:29 by ksansom           #+#    #+#             */
-/*   Updated: 2024/06/21 11:39:20 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/06/24 09:35:24 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main()
 	wrong->makeSound();
 	wrongCat->makeSound();
 	delete wrong;
-	delete wrongCat;
+	delete wrongCat; //should not output meow
 	
 	return 0;
 }
